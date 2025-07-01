@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // <-- Add this import
 import pixelArtVideo from "./Images/background.mp4";
 import messageImg from "./Images/message.png";
 import envelope from "./Images/1.png";
 import Marks from "./Images/mark.png";
 
 export default function Intro() {
+  const navigate = useNavigate(); // <-- Add this line
+
   function handleClick() {
     const whiteElement = document.getElementById("white");
     let whiteWidth = 0;
@@ -34,6 +37,8 @@ export default function Intro() {
         whiteHeight === window.innerHeight
       ) {
         clearInterval(interval);
+        whiteElement.style.width = "100vw";
+        whiteElement.style.height = "101vh";
         setTimeout(() => {
           document.getElementById("welcome").classList.remove("hidden");
         }, 700);
@@ -42,7 +47,7 @@ export default function Intro() {
   }
 
   function anotherpage() {
-    window.location.href = "/nav";
+    navigate("/nav"); // <-- Use navigate instead of window.location.href
   }
 
   return (

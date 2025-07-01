@@ -59,3 +59,48 @@ back-text {
     border-right-color: white;
   }
 }
+
+#nav-page {
+  animation: move 2s linear forwards;
+}
+
+.project-message {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.85);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 50;
+}
+
+.planet:hover {
+  transform: scale(3);
+  transition: transform 0.5s ease-in-out;
+}
+
+.planet:hover + .project-message {
+  opacity: 1;
+}
+
+.move {
+  background-image: url("./components/Images/space.jpg");
+  background-size: cover;
+  background-position: center;
+}
+@keyframes move {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
