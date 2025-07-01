@@ -42,6 +42,18 @@ export default function Nav() {
     }
   };
 
+  const home = () => {
+    const navpage = document.getElementById("nav-page");
+    const elements = navpage.getElementsByTagName("*");
+    for (const element of elements) {
+      element.style.opacity = "0";
+      element.style.transition = "opacity 1s ease-in-out";
+    }
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 700);
+  };
+
   let planets = [
     {
       name: "Earth",
@@ -98,20 +110,20 @@ export default function Nav() {
         <img src={help} alt="help" className="w-20" onClick={handleopenclear} />
       </div>
 
-      <div className="absolute top-1 right-15 z-50">
+      <div className="absolute top-5 right-23 z-50">
         <img
           src={speaker}
           alt="speaker"
-          className="w-35 speaker"
+          className="w-12 speaker "
           onClick={speakercontrol}
         />
       </div>
 
-      <div className="absolute top-1 right-15 z-50 ">
+      <div className="absolute top-5 right-23 z-50 ">
         <img
           src={speaker2}
           alt="speaker2"
-          className="w-35 hidden speaker2"
+          className="w-12 hidden speaker2 "
           onClick={speakercontrol}
         />
       </div>
@@ -141,14 +153,13 @@ export default function Nav() {
         ))}
       </div>
       <div className="absolute bottom-10 right-10 z-50">
-        <Link to="/">
-          <button
-            className="text-white rounded border-2 border-white hover:bg-white hover:text-black transition-colors duration-300 "
-            style={{ padding: "7px 20px" }}
-          >
-            Back to Home
-          </button>
-        </Link>
+        <button
+          className="text-white rounded border-2 border-white hover:bg-white hover:text-black transition-colors duration-300 "
+          style={{ padding: "7px 20px" }}
+          onClick={home}
+        >
+          Back to Home
+        </button>
       </div>
     </div>
   );
