@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import Earth from "./Images/earth.png";
 import Mars from "./Images/mars.png";
-// import Venus from "./Images/venus.png";
+import Neptune from "./Images/neptune.png";
 import Jupiter from "./Images/jupiter.png";
-// import Saturn from "./Images/saturn.png";
+import Saturn from "./Images/saturn.png";
 import message2 from "./Images/message2.jpg";
 import help from "./Images/help.png";
 import speaker from "./Images/speaker.png";
@@ -69,7 +69,13 @@ export default function Nav() {
       location: { top: 1 / 6, right: 4 / 5 },
       link: "/about",
     },
-    // { name: "Venus", image: Venus, message: "Contact" },
+    {
+      name: "Neptune",
+      image: Neptune,
+      message: "Contact",
+      location: { top: 1 / 2, right: 1 / 2 },
+      link: "/contact",
+    },
     {
       name: "Jupiter",
       image: Jupiter,
@@ -77,7 +83,13 @@ export default function Nav() {
       location: { top: 3 / 5, right: 5 / 7 },
       link: "/skills",
     },
-    // { name: "Saturn", image: Saturn, message: "Gallery" },
+    {
+      name: "Saturn",
+      image: Saturn,
+      message: "Gallery",
+      location: { top: 1 / 7, right: 1 / 2 },
+      link: "/gallery",
+    },
   ];
 
   return (
